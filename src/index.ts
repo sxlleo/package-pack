@@ -1,11 +1,3 @@
-/*
- * @Author: songxiaolin songxiaolin@aixuexi.com
- * @Date: 2023-02-21 17:09:53
- * @LastEditors: songxiaolin songxiaolin@aixuexi.com
- * @LastEditTime: 2023-04-12 15:55:42
- * @FilePath: /penCorrectPlayer/src/index.ts
- * @Description:
- */
 import type { Config, PenPointer, Line, LinePointer } from './types'
 
 const DefaultConfig: any = {
