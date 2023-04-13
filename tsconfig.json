@@ -1,0 +1,63 @@
+{
+  "include": [
+    // "env.d.ts", 
+    "src/**/*", 
+  ],
+  "exclude": [
+    "demo/*",
+  ],
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "ESNext",
+    "strict": false,
+    "allowJs": true,
+    "outDir":"./",
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "scripthost"],
+   
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+
+    // These compiler options are ignored by Rollup:
+    // noEmitHelpers, importHelpers: The tslib helper module always must be used.
+    // noEmit, emitDeclarationOnly: Typescript needs to emit code for the plugin to work with.
+    // Note: While this was true for early iterations of @rollup/plugin-typescript, it is no longer. To override this behavior, and defer to tsconfig.json for these options, see the noForceEmit option
+    "importHelpers": true,
+    "noEmitHelpers": true,
+
+    // Required in Vue projects
+    "jsx": "preserve",
+
+    // `"noImplicitThis": true` is part of `strict`
+    // Added again here in case some users decide to disable `strict`.
+    // This enables stricter inference for data properties on `this`.
+    "noImplicitThis": false,
+
+    // For `<script setup>`
+    // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
+    "preserveValueImports": true,
+    // Enforce using `import type` instead of `import` for types
+    "importsNotUsedAsValues": "error",
+    "ignoreDeprecations": "5.0",
+
+
+    // Recommended
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    // See <https://github.com/vuejs/vue-cli/pull/5688>
+    "skipLibCheck": true,
+
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ]
+}

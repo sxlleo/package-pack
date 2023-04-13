@@ -1,0 +1,41 @@
+{
+  "name": "package-pack",
+  "version": "1.0.5",
+  "description": "package with typescript",
+  "main": "dist/package-pack.cjs.js",
+  "module": "dist/package-pack.esm-bundler.js",
+  "browser": "dist/package-pack.global.js",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "filename": "package-pack",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "dev": "npm run build:watch & npm run preview",
+    "build": "rollup -c --bundleConfigAsCjs",
+    "build:watch": "rollup -c --bundleConfigAsCjs -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build",
+    "preview": "browser-sync start --server --startPath /demo/index.html --files './dist/*'"
+  },
+  "author": "songxiaolin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-alias": "^4.0.3",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.15.11",
+    "browser-sync": "^2.29.1",
+    "rollup": "^3.20.0",
+    "tslib": "^2.5.0",
+    "typescript": "4.x"
+  }
+}
